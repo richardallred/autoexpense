@@ -26,6 +26,7 @@ Successfully installed pip-24.2
 pip install -r requirements.txt
 ```
 ```
+(autoExpenseVenv) [richardallred@fedora autoexpense]$ pip install -r requirements.txt
 Collecting selenium (from -r requirements.txt (line 1))
   Using cached selenium-4.25.0-py3-none-any.whl.metadata (7.1 kB)
 ...
