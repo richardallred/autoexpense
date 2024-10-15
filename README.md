@@ -38,8 +38,51 @@ Successfully installed PyPDF2-3.0.1 attrs-24.2.0 certifi-2024.8.30 charset-norma
 ### Configure Environment Variables for your Verizon Username and Password
 
 ```
-export VERIZON_USERNAME="8888675309"
-export VERIZON_PASSWORD="SuperS3cur3Pa55w0rd!"
+export AUTOEXPENSE_VERIZON_USERNAME="8888675309"
+export AUTOEXPENSE_VERIZON_PASSWORD="SuperS3cur3Pa55w0rd!"
+export AUTOEXPENSE_RH_SSO_USER="rallred"
+export AUTOEXPENSE_RH_EMAIL="rallred@redhat.com"
+export AUTOEXPENSE_FIRST_NAME="Richard"
+export AUTOEXPENSE_CITY="Chapel Hill, North Carolina"
+export AUTOEXPENSE_DEVICE_AMT="38.88"
 ```
 
 ### Run Script
+
+Run with `python autoexpense.py`, you will be prompted to enter your PIN + Token when the RH SSO Login begins, please input that and press `Enter`
+
+```
+(venv) [richardallred@fedora autoexpense]$ python autoexpense.py
+Hello, Richard!
+Deleted: /home/richardallred/devprojects/autoexpense/downloads/MyBill_09.20.2024.pdf
+Download started successfully.
+Extracted dollar amount: 118.45
+Device Payment dollar amount: 38.88
+Total expensable amount is: 79.57
+Please input your PIN + Token for RH SSO:
+Found /home/richardallred/devprojects/autoexpense/downloads/MyBill_09.20.2024.pdf
+
+```
+
+
+Use `--help` to see the available options for CLI overrides
+
+```
+(venv) [richardallred@fedora autoexpense]$ python autoexpense.py --help
+usage: autoexpense.py [-h] [--name NAME] [--city CITY] [--downloadto DOWNLOADTO] [--deviceamt DEVICEAMT] [--headless] [--chrome-debug-port CHROME_DEBUG_PORT]
+
+A simple python script for automation of expense reports
+
+options:
+  -h, --help            show this help message and exit
+  --name NAME           Your first name on your verizon bill in case you have more than one line
+  --city CITY           The city your transaction should be listed in fully spelled out seperated with a comma (ex. Chapel Hill, North Carolina)
+  --downloadto DOWNLOADTO
+                        Location of the directory to download the PDF to
+  --deviceamt DEVICEAMT
+                        Amount to subtract for your monthly device payment which is not reimbursable
+  --headless            Should the browser run in a headless mode?
+  --chrome-debug-port CHROME_DEBUG_PORT
+                        Which port to run the chrome debugger on
+
+```
