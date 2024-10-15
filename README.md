@@ -35,7 +35,7 @@ Successfully installed PyPDF2-3.0.1 attrs-24.2.0 certifi-2024.8.30 charset-norma
 ```
 
 
-### Configure Environment Variables for your Verizon Username and Password
+### Configure Environment Variables
 
 ```
 export AUTOEXPENSE_VERIZON_USERNAME="8888675309"
