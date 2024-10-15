@@ -44,7 +44,7 @@ export AUTOEXPENSE_RH_SSO_USER="rallred"
 export AUTOEXPENSE_RH_EMAIL="rallred@redhat.com"
 export AUTOEXPENSE_FIRST_NAME="Richard"
 export AUTOEXPENSE_CITY="Chapel Hill, North Carolina"
-export AUTOEXPENSE_DEVICE_AMT="38.88"
+export AUTOEXPENSE_DEVICE_AMT=38.88
 ```
 
 ### Run Script

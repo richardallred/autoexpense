@@ -146,12 +146,12 @@ def upload_to_concur(driver,rh_email, rh_sso_username, downloadto, expensable_am
         save_button = WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Save Expense')]/..")))
         save_button.click()
 
-        time.sleep(1)
+        time.sleep(2)
 
         submit_button = WebDriverWait(driver,20).until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(),'Submit Report')]/../..")))
         submit_button.click()
 
-        # time.sleep(300)
+        time.sleep(300)
 
 
 def download_verizon_bill(driver, username, password, user_first, download_to, device_amt) -> float:
@@ -282,7 +282,7 @@ if __name__ == "__main__":
     parser.add_argument('--name', type=str, help='Your first name on your verizon bill in case you have more than one line')
     parser.add_argument('--city', type=str, help='The city your transaction should be listed in fully spelled out seperated with a comma (ex. Chapel Hill, North Carolina)')
     parser.add_argument('--downloadto', type=str, help='Location of the directory to download the PDF to')
-    parser.add_argument('--deviceamt', type=float, help='Amount to subtract for your monthly device payment which is not reimbursable')
+    parser.add_argument('--deviceamt', type=float, help='Amount to subtract for your monthly device payment which is not reimbursable ex. 38.88 for $38.88')
     parser.add_argument('--headless', action='store_true' , help='Should the browser run in a headless mode?', default=False)
     parser.add_argument('--chrome-debug-port', type=str, help='Which port to run the chrome debugger on', default='8333')
 
