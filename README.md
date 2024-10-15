@@ -1,6 +1,6 @@
 # Automate expense reports for monthly cell phone bill
 
-The `download_verizon_bill.py` script can be used to automate the download of the PDF of your cell phone bill from Verizon and submission of the expense to Concur
+The `autoexpense.py` script can be used to automate the download of the PDF of your cell phone bill from Verizon and submission of the expense to Concur
 
 ## Setup
 
