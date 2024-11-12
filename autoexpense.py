@@ -65,11 +65,22 @@ def upload_to_concur(driver,rh_email, rh_sso_username, downloadto, expensable_am
 
     time.sleep(1)
 
-    # Click "Start Report" Button
-    quick_task_button = WebDriverWait(driver, 20).until(
-        EC.element_to_be_clickable((By.XPATH, "//a[contains(@data-id, 'quicktasks-expenseStartReport')]"))
+    # Click "Create" Button
+    create_button = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[contains(@data-id, 'quicktasks-newDropdown')]"))
     )
-    quick_task_button.click()
+    create_button.click()
+
+    time.sleep(1)
+
+    # Click "Start a Report" Button
+    start_button = WebDriverWait(driver, 20).until(
+        EC.element_to_be_clickable((By.XPATH, "//a[contains(text(),'Start a Report')]"))
+    )
+    start_button.click()
+
+
+
 
     time.sleep(3)  # Allow time for the download to complete
 
@@ -266,6 +277,7 @@ if __name__ == "__main__":
     downloadto = os.getcwd()
     if os.getenv("AUTOEXPENSE_DEVICE_AMT"):
         deviceamt = os.getenv("AUTOEXPENSE_DEVICE_AMT")
+        deviceamt = float(deviceamt)
     else:
         deviceamt = 0.0
     rh_email = os.getenv("AUTOEXPENSE_RH_EMAIL")

@@ -1,0 +1,11 @@
+export AUTOEXPENSE_VERIZON_USERNAME=""
+export AUTOEXPENSE_VERIZON_PASSWORD=""
+export AUTOEXPENSE_RH_EMAIL=""
+export AUTOEXPENSE_RH_SSO_USER=""
+export AUTOEXPENSE_FIRST_NAME=""
+export AUTOEXPENSE_CITY=""
+export AUTOEXPENSE_DEVICE_AMT=0.00
+
+source ./venv/bin/activate
+
+python autoexpense.py
